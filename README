@@ -1,7 +1,7 @@
-SofTalk(http://www35.atwiki.jp/softalk/)を利用してTwitterのStream APIから取ってきたツイートを延々と読み上げるツール。
+SofTalk( http://www35.atwiki.jp/softalk/ )を利用してTwitterのStream APIから取ってきたツイートを延々と読み上げるツール。※要SofTalk
 
 とりあえず自分用にしか作ってないのでGUIでもなければCUIで動くとも限らない。
-今はコードいじらないと動かない感じだけどそのうちCUIで動くようにするかも。
+今は自分の環境に合わせてハードコーディングしちゃってるのでいじらないと動かない感じだけど、そのうちCUIで動くようにするかも。
 
 
 TLの速度に応じて読み上げる速度も調整できたらいいですね。
