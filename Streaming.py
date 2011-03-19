@@ -12,7 +12,7 @@ follow_list = []
 
 def CallSofTalk2(text):
     text = text.strip('\n')
-    options = '\'/X:1 /S:180 /W:\"%s\"\'' % (text)
+    options = '\'/X:1 /V:80 /S:180 /W:\"%s\"\'' % (text)
     try:
         subprocess.Popen([path, options])
     except OSError, e:
@@ -20,13 +20,21 @@ def CallSofTalk2(text):
 
 def CallSofTalk(text):
     text = text.encode('utf-8')
-    cmd = path + ' /X:1 /S:180 /W:"%s"' % (text)
+    cmd = path + ' /X:1 /V:80 /S:180 /W:"%s"' % (text)
     os.system(cmd)
 
 def check_tweet(status):
     for id in follow_list:
+        #checking tweet what is folloing user's or not
         if status.author.id == id:
-            return True
+            # checking mention what is folloing or not
+            if not status.in_reply_to_user_id:
+                return True
+            else:
+                for mention_id in follow_list:
+                    if status.in_reply_to_user_id == mention_id:
+                        return True
+                return False
     return False
 
 class SofTalkStreamListener(StreamListener):
@@ -50,9 +58,12 @@ def main():
 
     global follow_list
     follow_list = tweepy.api.friends_ids(screen_name=username)
+    follow_list.append(tweepy.api.get_user(username).id)
 
     stream = Stream(username, passwd, SofTalkStreamListener(), timeout=None)
     stream.filter(follow=follow_list)
+
+    # add ownself for check_tweet
 
 if __name__ == "__main__":
     try:
