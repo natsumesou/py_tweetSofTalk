@@ -127,7 +127,9 @@ def main():
         username = raw_input('twitter username: ')
     else:
         print 'username: ' + username
-    passwd = getpass('password: ')
+    passwd = ''
+    while not passwd:
+        passwd = getpass('password: ')
 
     global follow_list
     follow_list = tweepy.api.friends_ids(screen_name=username)

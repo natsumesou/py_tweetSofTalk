@@ -2,7 +2,24 @@ SofTalk( http://www35.atwiki.jp/softalk/ )を利用してTwitterのStream APIか
 ※要SofTalk
 
 とりあえず自分用にしか作ってないのでGUIでもなければCUIで動くとも限らない。
-今は自分の環境に合わせてハードコーディングしちゃってるのでいじらないと動かない感じだけど、そのうちCUIで動くようにするかも。
+
+動作検証済み
+Windows7 pro (64bit)
+python 2.6.5
+cygwin上
+
+において、下記設定ファイルを編集後にStream.pyを実行
+
+settings.ini
+[Authentication]
+username…twitterのアカウント名を入れる。
+空欄の場合は起動毎に入力する必要がある
+
+[SofTalk]
+path…SofTalkw.exeのパスを入力する(例: /cygdrive/c/Users/natsumesou/Documents/softalk/SofTalkw.exe )
+volume…音声のボリューム（0-100）
+speed…音声を読み上げる速度
 
 
-TLの速度に応じて読み上げる速度も調整できたらいいですね。
+softalkw.ini
+twitterで読み上げるときに便利な単語変換が入ったsoftalkwの設定ファイル
