@@ -11,15 +11,16 @@ cygwin上
 において、下記設定ファイルを編集後にStream.pyを実行
 
 settings.ini
+
+[SofTalk]
+volume…音声のボリューム（0-100）
+speed…音声を読み上げる速度(自動調整されるのでデフォルトのままがおすすめ)
+min_speed…音声を読み上げる最低速度
+path…SofTalkw.exeのパスを入力する(例: /cygdrive/c/Users/natsumesou/Documents/softalk/SofTalkw.exe )
+
 [Authentication]
 username…twitterのアカウント名を入れる。
 空欄の場合は起動毎に入力する必要がある
-
-[SofTalk]
-path…SofTalkw.exeのパスを入力する(例: /cygdrive/c/Users/natsumesou/Documents/softalk/SofTalkw.exe )
-volume…音声のボリューム（0-100）
-speed…音声を読み上げる速度
-
 
 softalkw.ini
 twitterで読み上げるときに便利な単語変換が入ったsoftalkwの設定ファイル
