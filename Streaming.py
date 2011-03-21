@@ -135,7 +135,7 @@ def worker():
         softalks = SofTalk_Queue.get()
         sprocess = CallSofTalk(softalks['text'], softalks['speed'])
         while sprocess.poll() == None:
-            time.sleep(0.5)
+            time.sleep(0.1)
 
 # Custion StreamListener
 class SofTalkStreamListener(StreamListener):
